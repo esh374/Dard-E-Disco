@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handbook 2.0 proposal</title>
+	<style>
+		.icon {
+			cursor: pointer;
+			text-align: center;
+		}
+		.popup {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+		.overlay {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="icon" onclick="showPopup()">
+		<img src="smallpda.jpeg" alt="No PDA allowed">
+	</div>
+	
+	<div id="popup" class="popup">
+		<p>PDA is not allowed on campus</p>
+	</div>
+	
+	<div id="overlay" class="overlay" onclick="hidePopup()"></div>
+	
+	<script>
+		function showPopup() {
+			var popup = document.getElementById("popup");
+			var overlay = document.getElementById("overlay");
+			popup.style.display = "block";
+			overlay.style.display = "block";
+			setTimeout(function() {
+				window.location.href = "pdarules.html";
+			}, 1000); // redirect after 2 seconds
+		}
+		
+		function hidePopup() {
+			var popup = document.getElementById("popup");
+			var overlay = document.getElementById("overlay");
+			popup.style.display = "none";
+			overlay.style.display = "none";
+		}
+	</script>
+</body>
+</html>
