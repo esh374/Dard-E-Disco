@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handbook 2.0</title>
+	<style>
+		.popup {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #f00;
+			color: #fff;
+			font-size: 24px;
+			border-radius: 10px;
+			text-align: center;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.gif {
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<section class="container">
+	
+	<div id="popup" class="popup" style="display: none;">
+		Smoking is not allowed on campus!!
+		<a href="https://example.com"><img src="smoking.gif" alt="Smoking is not allowed on campus" onclick="showPopup()"></a>
+	
+	<script>
+		function showPopup() {
+			document.getElementById("popup").style.display = "block";
+			setTimeout(function() {
+				window.location.href = "smoking.html";
+			}, 3000); // Redirect to another webpage after 3 seconds
+		}
+	</script>
+</div>
+</section>
+</body>
+</html>
